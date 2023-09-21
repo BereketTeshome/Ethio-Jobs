@@ -40,9 +40,8 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post("http://localhost:3001/api/user/register", formik.values)
+      await axios.post("http://localhost:3001/user/register", formik.values)
       setTimeout(()=> {
-
         toast.success('SIGN UP Success!', {
           position: "top-right",
           autoClose: 2000,
@@ -68,7 +67,7 @@ const Register = () => {
       <div className='register-container'>
         <div>
         <div style={{display:'flex', justifyContent:'center'}}>
-          <h3 style={{fontSize:'1.7rem', color:'white'}}>SIGN UP</h3>
+          <h3 style={{fontSize:'1.7rem', color:'white'}}><span style={{color:'#011E3D'}}>SIGN</span> UP</h3>
         </div>
                   
           <form onSubmit={formik.handleSubmit}>

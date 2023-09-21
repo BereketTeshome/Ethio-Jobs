@@ -38,10 +38,12 @@ const Login = () => {
     e.preventDefault()
     try {
       const res = await axios.post("http://localhost:3001/api/user/login", formik.values)
-      console.log(res.data);
       if (!res.data.error) {
+        localStorage.setItem("token", res.data.token)
+        localStorage.setItem("isAdmin", res.data.user.isAdmin)
+        navigate('/')
         setTimeout(()=> {
-        toast.success('LOG IN Success!', {
+        toast.success(`Hello! ${formik.values.username}`, {
           position: "top-right",
           autoClose: 2000,
           hideProgressBar: false,
@@ -51,39 +53,36 @@ const Login = () => {
           progress: undefined,
           theme: "light",
         });
-      }, 2)
+      }, 1)
       }
       
       if (res.data.error) {
-        toast.error(`${res.data.error}`, {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
-      }
-      if (!res.data.error) {
-        
-        navigate('/')
+        console.log(res.data.error);
+        setTimeout(()=> {
+          toast.error(`${res.data.error}`, {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        }, 1)  
       }
     } catch (error) {
       console.error(error);
     }  
   }
   
-  
-
   return (
     <div className='login'>
       <Navbar />
       <div className='register-container' style={{top:'100px'}}>
         <div>
         <div style={{display:'flex', justifyContent:'center'}}>
-          <h3 style={{fontSize:'1.7rem', color:'white'}}>LOG IN</h3>
+          <h3 style={{fontSize:'1.7rem', color:'white'}}><span style={{color:'#011E3D', fontSize:'2.2rem'}}>Log</span> IN</h3>
         </div>
         <form onSubmit={formik.handleSubmit}>
           <div className='register-input-container'>

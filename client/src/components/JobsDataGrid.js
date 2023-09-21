@@ -11,7 +11,7 @@ import Loading from './Loading';
 const JobsDataGrid = () => {
   const [loading, setLoading] = useState(false)
   const [jobs, setJobs] = useState([]) 
-    
+  
     useEffect(() => {
         const fetchJobs = async () => {
             setLoading(true)
@@ -31,8 +31,8 @@ const JobsDataGrid = () => {
     }
     
     const columns = [
-        {field: "_id", headerName: "User ID", width: 200, editable: true,headerClassName: 'datagrid-header'},
-        {field: "jobName", headerName: "Job Name", width: 180, headerClassName: 'datagrid-header'},
+        {field: "_id", headerName: "User ID", width: 150, editable: true,headerClassName: 'datagrid-header'},
+        {field: "jobName", headerName: "Job Name", width: 160, headerClassName: 'datagrid-header'},
         {field:"category", headerName:'Category', width:160, headerClassName: 'datagrid-header'},
         {field:"jobSalary", headerName:'Salary', width:130, headerClassName: 'datagrid-header', renderCell:(params) => (
             `$ ${params.row.jobSalary}`
@@ -67,8 +67,6 @@ const JobsDataGrid = () => {
         rows={data}
         columns={columns}
         slots={{toolbar: GridToolbar}}
-        pageSize={5}
-        rowsPerPageOptions={[5, 10, 15]}
       />
     </div>
   )

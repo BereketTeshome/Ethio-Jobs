@@ -14,7 +14,7 @@ import LOGO from '../Images/logo.png'
 
 
 const CreateJob = () => {
-  const [slide, setSlide] = useState(true)
+  const [slide, setSlide] = useState(false)
   const navigate = useNavigate()
 
   const formik = useFormik({
@@ -79,7 +79,7 @@ const CreateJob = () => {
             <Link to="/admin/users"><div><PeopleAltTwoToneIcon className='dashboard-icon'/> <span style={{display: slide ? 'block' : 'none'}}>Users</span></div></Link>
             <Link to="/admin/jobs"><div><WorkOutlineTwoToneIcon className='dashboard-icon'/> <span style={{display: slide ? 'block' : 'none'}}>Jobs</span></div></Link>
         </div>
-      <div className='register-container' style={{left:'15%', width:'40%'}}>
+      <div className='create-job-container'>
         <div>
         <div style={{display:'flex', justifyContent:'center'}}>
           <h3 style={{fontSize:'1.7rem', color:'white'}}><span style={{color:'#011E3D'}}>Create</span> Job</h3>
@@ -99,7 +99,6 @@ const CreateJob = () => {
               {formik.touched.title && formik.errors.title ? <p>{formik.errors.title}</p>: null}
 
               <label htmlFor="description">Description </label>
-              {/* <textarea name="" id="" cols="30" rows="10"></textarea> */}
               <div>
                 <textarea 
                     cols="70"

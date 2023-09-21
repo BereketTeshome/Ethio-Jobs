@@ -19,7 +19,6 @@ const Section = () => {
   const navigate = useNavigate()
 
   const location = useLocation().pathname.split('/')[2]
-  //  console.log(category);
   useEffect(() => {
       const filterJobs = async () => {
         setLoading(true)
@@ -56,14 +55,14 @@ const Section = () => {
     <>
     <Navbar /><br /><br />
     <div className='filtered-header'>
-      <h2>Jobs in <span style={{color:'#2296F0', fontSize:'2rem'}}> {location.split('%20')}</span></h2>
+      <h2>Jobs in <span style={{color:'#2296F0', fontSize:'100%'}}> {location.split('%20')}</span></h2>
       <button className='goBack' onClick={() => navigate(-1)}> <ReplyAllIcon className='go-back-icon'/> Go Back</button>
     </div>
 
     <section className='section'>
       <div className='section-left'>
         <div className='section-category'>
-        <p>Filter job by category</p>
+        <p>Filter job by</p>
           <fieldset>
               <legend>category</legend>
               <select name="category" id="" value={category} onChange={(e) => setCategory(e.target.value)}>
@@ -76,14 +75,14 @@ const Section = () => {
         </div>
         <div className='section-location'>
           <p>Filter job by location</p>
-          <Link to='/location/Addis Ababa' style={{textDecoration:'none'}}><li><Span/> Addis Ababa</li></Link>
-          <Link to='/location/Dire Dawa' style={{textDecoration:'none'}}><li><Span/> Dire Dawa</li></Link>
-          <Link to='/location/Gondar' style={{textDecoration:'none'}}><li><Span/> Gondar</li></Link>
-          <Link to='/location/Mekelle' style={{textDecoration:'none'}}><li><Span/> Mekelle</li></Link>
-          <Link to='/location/Bahir Dar' style={{textDecoration:'none'}}><li><Span/> Bahir Dar</li></Link>
-          <Link to='/location/Jimma' style={{textDecoration:'none'}}><li><Span/> Jimma</li></Link>
-          <Link to='/location/Gambella' style={{textDecoration:'none'}}><li><Span/> Gambella</li></Link>
-          <Link to='/location/Harar' style={{textDecoration:'none'}}><li><Span/> Harar</li></Link>
+          <Link to='/location/Addis Ababa' style={{textDecoration:'none'}}><li><Span/> <span>Addis Ababa</span></li></Link>
+          <Link to='/location/Dire Dawa' style={{textDecoration:'none'}}><li><Span/><span>Dire Dawa</span></li></Link>
+          <Link to='/location/Gondar' style={{textDecoration:'none'}}><li><Span/> <span>Gondar</span></li></Link>
+          <Link to='/location/Mekelle' style={{textDecoration:'none'}}><li><Span/> <span>Mekelle</span></li></Link>
+          <Link to='/location/Bahir Dar' style={{textDecoration:'none'}}><li><Span/> <span>Bahir Dar</span></li></Link>
+          <Link to='/location/Jimma' style={{textDecoration:'none'}}><li><Span/> <span>Jimma</span></li></Link>
+          <Link to='/location/Gambella' style={{textDecoration:'none'}}><li><Span/> <span>Gambella</span></li></Link>
+          <Link to='/location/Harar' style={{textDecoration:'none'}}><li><Span/> <span>Harar</span></li></Link>
 
         </div>
       </div>

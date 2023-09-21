@@ -33,8 +33,8 @@ const Grid = () => {
     }
     
     const columns = [
-        {field: "_id", headerName: "User ID", width: 200, editable: true,headerClassName: 'datagrid-header'},
-        {field: "email", headerName: "Email", width: 200, headerClassName: 'datagrid-header'},
+        {field: "_id", headerName: "User ID", width: 150, editable: true,headerClassName: 'datagrid-header'},
+        {field: "email", headerName: "Email", width: 180, headerClassName: 'datagrid-header'},
         {field: "createdAt", headerName: "Created Date",headerClassName: 'datagrid-header', width: 170, renderCell:(params) => (
             moment(params.row.createdAt).format('YYYY-MM-DD HH:MM:SS')
         )},

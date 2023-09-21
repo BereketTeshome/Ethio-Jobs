@@ -11,7 +11,7 @@ const About = () => {
     <Navbar />
     <div className='about'>
       <header className='about_header'>
-        <h1><span>About</span> <span className='about_span'>Us</span></h1>
+        <h1>About <span className='about_span'>Us</span></h1>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam odio, sapiente, ipsam possimus quo vel sequi aspernatur facere incidunt sint ipsum eos deserunt modi animi dolorum atque maiores laboriosam autem.</p>
       </header>
 

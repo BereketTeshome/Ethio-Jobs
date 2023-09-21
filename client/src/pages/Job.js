@@ -31,10 +31,10 @@ const Job = () => {
             <div className="job" key={_id}>
               <div style={{display:'flex', justifyContent:'space-between'}}><h2>{title}</h2><button className='goBack' onClick={() => navigate(-1)}> <ReplyAllIcon className='go-back-icon'/> Go Back</button></div>
               <span>{category}</span>
-              <p style={{color:'#2996F0', fontSize:"0.9rem", marginBottom:'10px'}}>Type: <HomeIcon fontSize='very small' style={{position:'relative', top:'2px', color:'#2996F0' }}/> {jobType}</p>
-              <p style={{color:'#2996F0', fontSize:"0.9rem", marginBottom:'10px'}}>Duration: <AccessTimeIcon fontSize='very small' style={{position:'relative', top:'2px', color:'#2996F0' }}/> {jobDuration}</p>
-              <p style={{color:'#2996F0', fontSize:"0.9rem", marginBottom:'10px'}}>Location: <LocationOnIcon fontSize='very small' style={{position:'relative', top:'2px', color:'#2996F0' }}/> {location}</p>
-              <p style={{color:'#2996F0', fontSize:"0.9rem", marginBottom:'10px'}}>Salary:  $ {salary}</p>
+              <p style={{color:'#2996F0', fontSize:"0.8rem", marginBottom:'10px'}}>Type: <HomeIcon fontSize='very small' style={{position:'relative', top:'2px', color:'#2996F0' }}/> {jobType}</p>
+              <p style={{color:'#2996F0', fontSize:"0.8rem", marginBottom:'10px'}}>Duration: <AccessTimeIcon fontSize='very small' style={{position:'relative', top:'2px', color:'#2996F0' }}/> {jobDuration}</p>
+              <p style={{color:'#2996F0', fontSize:"0.8rem", marginBottom:'10px'}}>Location: <LocationOnIcon fontSize='very small' style={{position:'relative', top:'2px', color:'#2996F0' }}/> {location}</p>
+              <p style={{color:'#2996F0', fontSize:"0.8rem", marginBottom:'10px'}}>Salary:  $ {salary}</p>
               <h5><b>Description</b>: {description}</h5>            
             </div>
           )

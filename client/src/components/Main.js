@@ -1,9 +1,10 @@
-import React from 'react'
-import Navbar from './Navbar'
-import Header from './Header'
-import Section from './Section'
-import Footer from './Footer'
+import {React, lazy} from 'react'
 
+
+const Navbar = lazy(()=> import('./Navbar'))
+const Header = lazy(()=> import('./Header'))
+const Section = lazy(()=> import('./Section'))
+const Footer = lazy(()=> import('./Footer'))
 
 const Main = () => {
   return (

@@ -13,7 +13,7 @@ import axios from 'axios'
 
 const Dashboard = () => {
 
-  const [slide, setSlide] = useState(true)
+  const [slide, setSlide] = useState(false)
   const [jobs, setJobs] = useState("")
   const [users, setUsers] = useState("")
 

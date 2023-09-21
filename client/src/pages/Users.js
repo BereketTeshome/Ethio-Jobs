@@ -10,7 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { ToastContainer } from 'react-toastify';
 
 const Users = () => {
-  const [slide, setSlide] = useState(true)
+  const [slide, setSlide] = useState(false)
   return (
     <div>
       <div className='navbar' style={{background:'#011E3D'}}>
