@@ -18,7 +18,7 @@ const Job = () => {
       console.log(res.data.job);
     }
     fetchData()
-  }, [])
+  }, [location])
   
 
   return (
