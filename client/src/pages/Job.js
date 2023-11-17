@@ -29,7 +29,7 @@ const Job = () => {
           const {_id, title, description, salary, jobType, jobDuration, location, category} = item
           return(
             <div className="job" key={_id}>
-              <div style={{display:'flex', justifyContent:'space-between'}}><h2>{title}</h2><button className='goBack' onClick={() => navigate(-1)}> <ReplyAllIcon className='go-back-icon'/> Go Back</button></div>
+              <div style={{display:'flex', justifyContent:'space-between'}}><h2>{title}</h2><button className='goBack' onClick={() => navigate(-1)}> <ReplyAllIcon className='go-back-icon'/></button></div>
               <span>{category}</span>
               <p style={{color:'#2996F0', fontSize:"0.8rem", marginBottom:'10px'}}>Type: <HomeIcon fontSize='very small' style={{position:'relative', top:'2px', color:'#2996F0' }}/> {jobType}</p>
               <p style={{color:'#2996F0', fontSize:"0.8rem", marginBottom:'10px'}}>Duration: <AccessTimeIcon fontSize='very small' style={{position:'relative', top:'2px', color:'#2996F0' }}/> {jobDuration}</p>

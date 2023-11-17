@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import LOGO from '../Images/logo.png'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import LogoutIcon from '@mui/icons-material/Logout';
 import HomeIcon from '@mui/icons-material/Home';
@@ -13,6 +13,7 @@ const Navbar = () => {
     const token = localStorage.getItem("token")
     const isAdmin = localStorage.getItem("isAdmin")
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const navigate = Navigate()
 
   useEffect(() => {
     const handleWindowResize = () => {
@@ -28,6 +29,7 @@ const Navbar = () => {
 
     const handleLogOut = () =>{
         localStorage.clear()
+        navigate("/")
         window.location.reload()
         setTimeout(()=> {
           toast.success(`Logged out!`, {
