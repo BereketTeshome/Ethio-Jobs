@@ -15,6 +15,10 @@ app.use(cors())
 app.use("/api/user", authRouter)
 app.use("/api/job", jobRouter)
 
+app.get("/", (req, res)=>{
+    res.send("Hello World!")
+})
+
 
 const start = async () =>{
     const port = 3001 
