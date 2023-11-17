@@ -46,7 +46,7 @@ const EditUser = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.put(`https://ethio-jobs.vercel.app/api/user/edit/${location}`, formik.values)
+      await axios.put(`http://localhost:3001/api/user/edit/${location}`, formik.values)
       setTimeout(()=> {
         toast.success('USER UPDATED!', {
           position: "top-right",

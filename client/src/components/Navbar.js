@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import LOGO from '../Images/logo.png'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import LogoutIcon from '@mui/icons-material/Logout';
 import HomeIcon from '@mui/icons-material/Home';
@@ -13,7 +13,7 @@ const Navbar = () => {
     const token = localStorage.getItem("token")
     const isAdmin = localStorage.getItem("isAdmin")
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    const navigate = Navigate()
+    const navigate = useNavigate()
 
   useEffect(() => {
     const handleWindowResize = () => {
@@ -28,21 +28,21 @@ const Navbar = () => {
   });
 
     const handleLogOut = () =>{
-        localStorage.clear()
-        navigate("/")
-        window.location.reload()
-        setTimeout(()=> {
-          toast.success(`Logged out!`, {
-            position: "top-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-          });
-        }, 1)
+      localStorage.clear()
+      window.location.reload()
+      navigate("/")
+      setTimeout(()=> {
+        toast.success(`Logged out!`, {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      }, 1)
     }
     
   return (

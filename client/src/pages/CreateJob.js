@@ -44,7 +44,7 @@ const CreateJob = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post("https://ethio-jobs.vercel.app/api/job/create", formik.values)
+      await axios.post("http://localhost:3001/api/job/create", formik.values)
       setTimeout(()=> {
 
         toast.success('Job CREATED!', {

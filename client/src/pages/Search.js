@@ -19,7 +19,7 @@ const Search = () => {
     const fetchData = async() =>{
         setLoading(true)
         try {
-            const res = await axios.post(`https://ethio-jobs.vercel.app/api/job/search?searchTerm=${searchTerm}`)
+            const res = await axios.post(`http://localhost:3001/api/job/search?searchTerm=${searchTerm}`)
             setData(res.data.job)
             setLoading(false)
         } catch (error) {

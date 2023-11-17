@@ -22,7 +22,7 @@ const Section = () => {
   useEffect(() => {
       const filterJobs = async () => {
         setLoading(true)
-        const res = await axios.get(`https://ethio-jobs.vercel.app/api/job/?${category ? `location=${location}&category=${category}` : `location=${location}`}`)
+        const res = await axios.get(`http://localhost:3001/api/job/?${category ? `location=${location}&category=${category}` : `location=${location}`}`)
         setFiltered(res.data.job)
         console.log(res.data.job);
         setLoading(false)

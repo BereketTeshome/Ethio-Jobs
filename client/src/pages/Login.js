@@ -37,7 +37,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const res = await axios.post("https://ethio-jobs.vercel.app/api/user/login", formik.values)
+      const res = await axios.post("http://localhost:3001/api/user/login", formik.values)
       if (!res.data.error) {
         localStorage.setItem("token", res.data.token)
         localStorage.setItem("isAdmin", res.data.user.isAdmin)

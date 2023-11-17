@@ -13,7 +13,7 @@ const Job = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get(`https://ethio-jobs.vercel.app/api/job/get/${location}`)
+      const res = await axios.get(`http://localhost:3001/api/job/get/${location}`)
       setJob([res.data.job])
       console.log(res.data.job);
     }
