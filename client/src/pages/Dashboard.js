@@ -19,9 +19,9 @@ const Dashboard = () => {
 
   useEffect(() => {
     const fetchJobs = async () => {
-      const jobs = await axios.get("http://localhost:3001/api/job/get")
+      const jobs = await axios.get("https://ethio-jobs.vercel.app/api/job/get")
       setJobs(jobs.data.count)
-      const users = await axios.get("http://localhost:3001/api/user/users")
+      const users = await axios.get("https://ethio-jobs.vercel.app/api/user/users")
       setUsers(users.data.count)
     }
     fetchJobs()

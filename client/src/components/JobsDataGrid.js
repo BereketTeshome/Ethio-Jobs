@@ -15,7 +15,7 @@ const JobsDataGrid = () => {
     useEffect(() => {
         const fetchJobs = async () => {
             setLoading(true)
-            const res = await axios.get("http://localhost:3001/api/job/get")
+            const res = await axios.get("https://ethio-jobs.vercel.app/api/job/get")
             setJobs(res.data.job)
             setLoading(false)
       }
@@ -26,7 +26,7 @@ const JobsDataGrid = () => {
         return <Loading />
       }
     const handleDelete =async (id) => {
-        await axios.delete(`http://localhost:3001/api/job/delete/${id}`)
+        await axios.delete(`https://ethio-jobs.vercel.app/api/job/delete/${id}`)
         window.location.reload()
     }
     

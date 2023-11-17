@@ -46,7 +46,7 @@ const CreateUser = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post("http://localhost:3001/api/user/register", formik.values)
+      await axios.post("https://ethio-jobs.vercel.app/api/user/register", formik.values)
       setTimeout(()=> {
 
         toast.success('USER CREATED!', {

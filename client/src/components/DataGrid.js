@@ -16,7 +16,7 @@ const Grid = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             setLoading(true)
-            const res = await axios.get("http://localhost:3001/api/user/users")
+            const res = await axios.get("https://ethio-jobs.vercel.app/api/user/users")
             setUsers(res.data.users)
             setLoading(false)
       }
@@ -28,7 +28,7 @@ const Grid = () => {
     }
 
     const handleDelete =async (id) => {
-        await axios.delete(`http://localhost:3001/api/user/delete/${id}`)
+        await axios.delete(`https://ethio-jobs.vercel.app/api/user/delete/${id}`)
         window.location.reload()
     }
     
