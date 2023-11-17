@@ -718,7 +718,7 @@ footer {
     display: inline-block;
     width: 80px;
     height: 40vh;
-    left: 45%;
+    left: 40%;
 }
 .lds-hourglass:after {
     content: " ";

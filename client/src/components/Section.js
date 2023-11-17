@@ -18,7 +18,7 @@ const Section = () => {
     const fetchJobs = async () => {
       try {
         setLoading(true)
-        const res = await axios.get(`http://localhost:3001/api/job/${category ? `getJob?category=${category}` : 'get'}`)
+        const res = await axios.get(`https://ethio-jobs.vercel.app/api/job/${category ? `getJob?category=${category}` : 'get'}`)
         setJobs(res.data.job)
         setLoading(false)
       } catch (error) {

@@ -40,7 +40,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post("http://localhost:3001/user/register", formik.values)
+      await axios.post("https://ethio-jobs.vercel.app/user/register", formik.values)
       setTimeout(()=> {
         toast.success('SIGN UP Success!', {
           position: "top-right",
