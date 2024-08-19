@@ -1,19 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import { useDispatch } from "react-redux";
+import { changeComponent } from "../features/Components";
 import JobsDataGrid from "./JobsDataGrid";
 import { ToastContainer } from "react-toastify";
 
 const Jobs = () => {
+  const dispatch = useDispatch();
+
   return (
     <div>
       <div className="dashboard">
         <div className="dashboard-main">
           <h1 style={{ padding: "2% 24%" }}>Jobs</h1>
 
-          <Link to="/admin/jobs/create">
-            <button className="create-user-btn">+ CREATE JOB</button>
-          </Link>
+          <button
+            className="create-user-btn"
+            onClick={() => dispatch(changeComponent("createJob"))}
+          >
+            + CREATE JOB
+          </button>
           <div className="sub-dashboard-main">
             <JobsDataGrid />
           </div>

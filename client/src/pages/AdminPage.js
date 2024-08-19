@@ -34,23 +34,33 @@ const AdminPage = () => {
             alt="admin logo"
             style={{ position: "relative", left: slide ? "0px" : "-33px" }}
           />
-          <div onClick={() => dispatch(changeComponent("dashboard"))}>
+          <div
+            onClick={() =>
+              dispatch(changeComponent({ componentName: "dashboard" }))
+            }
+          >
             <DashboardTwoToneIcon className="dashboard-icon" />{" "}
             <span style={{ display: slide ? "block" : "none" }}>Dashboard</span>
           </div>
 
-          <div onClick={() => dispatch(changeComponent("users"))}>
+          <div
+            onClick={() =>
+              dispatch(changeComponent({ componentName: "users" }))
+            }
+          >
             <PeopleAltTwoToneIcon className="dashboard-icon" />{" "}
             <span style={{ display: slide ? "block" : "none" }}>Users</span>
           </div>
 
-          <div onClick={() => dispatch(changeComponent("jobs"))}>
+          <div
+            onClick={() => dispatch(changeComponent({ componentName: "jobs" }))}
+          >
             <WorkOutlineTwoToneIcon className="dashboard-icon" />{" "}
             <span style={{ display: slide ? "block" : "none" }}>Jobs</span>
           </div>
         </div>
 
-        <div>{currentComponent}</div>
+        <div>{currentComponent.component}</div>
       </div>
     </div>
   );
