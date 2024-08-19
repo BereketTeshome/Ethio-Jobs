@@ -2,13 +2,12 @@ import React from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useNavigate, useLocation } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useSelector } from "react-redux";
 
 const EditJob = () => {
-  const location = useLocation().pathname.split("/")[4];
-  const navigate = useNavigate();
+  const id = useSelector((state) => state.component.value.id);
 
   const formik = useFormik({
     initialValues: {
@@ -38,22 +37,19 @@ const EditJob = () => {
     e.preventDefault();
     try {
       await axios.put(
-        `https://ethio-jobs.vercel.app/api/job/edit/${location}`,
+        `https://ethio-jobs.vercel.app/api/job/edit/${id}`,
         formik.values
       );
-      setTimeout(() => {
-        toast.success("JOB UPDATED!", {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
-      }, 1);
-      navigate("/admin/jobs");
+      toast.success("JOB UPDATED!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     } catch (error) {
       console.error(error);
     }
