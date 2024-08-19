@@ -458,6 +458,7 @@ footer {
 .dashboard-icon {
   margin: 0 9px;
   color: #2395f0;
+  cursor: pointer;
 }
 .dashboard-sidebar div:hover .dashboard-icon {
   transform: rotate(360deg);
