@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import VisibilityIcon from "@mui/icons-material/Visibility";
@@ -44,7 +43,6 @@ const EditUser = () => {
       console.log(values);
     },
   });
-  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,19 +51,17 @@ const EditUser = () => {
         `https://ethio-jobs.vercel.app/api/user/edit/${id}`,
         formik.values
       );
-      setTimeout(() => {
-        toast.success("USER UPDATED!", {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
-      }, 1);
-      navigate("/admin");
+
+      toast.success("USER UPDATED!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     } catch (error) {
       console.error(error);
     }

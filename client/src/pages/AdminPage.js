@@ -8,6 +8,7 @@ import WorkOutlineTwoToneIcon from "@mui/icons-material/WorkOutlineTwoTone";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useDispatch, useSelector } from "react-redux";
 import { changeComponent } from "../features/Components";
+import { ToastContainer } from "react-toastify";
 
 const AdminPage = () => {
   const dispatch = useDispatch();
@@ -62,6 +63,7 @@ const AdminPage = () => {
 
         <div>{currentComponent.component}</div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
